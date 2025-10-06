@@ -1,8 +1,9 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
+    "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "vite build --config vite.config.mjs",
         "dev": "vite",
         "start": "node server.js"
     },

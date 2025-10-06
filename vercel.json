@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "edu",
+  "builds": [
+    { "src": "api/index.php", "use": "@vercel/php@2.0.2" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(css|js|img|favicon.ico|robots.txt)(/.*)?", "dest": "/public/$1$2" },
+    { "src": "/.*", "dest": "/api/index.php" }
+  ]
+}

@@ -32,3 +32,5 @@ Thumbs.db
 
 # Databases (local dev)
 /database/*.sqlite
+
+.vercel

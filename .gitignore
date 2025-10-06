@@ -1,0 +1,34 @@
+# Laravel & PHP
+/.env
+/.env.*
+/vendor/
+/bootstrap/cache/*.php
+!bootstrap/cache/.gitignore
+/storage/*.key
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/public/storage
+
+# Node
+/node_modules/
+/public/build/
+/resources/js/**/*.map
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs & OS
+/.idea/
+/.vscode/
+/.DS_Store
+Thumbs.db
+
+# Databases (local dev)
+/database/*.sqlite

@@ -4,7 +4,7 @@
   "installCommand": "composer install --no-interaction --prefer-dist --optimize-autoloader && npm ci --no-audit --no-fund",
   "buildCommand": "npx vite build --config vite.config.mjs",
   "builds": [
-    { "src": "api/index.php", "use": "@vercel/php@2.0.2" },
+    { "src": "api/index.php", "use": "vercel-php@0.6.0" },
     { "src": "public/**", "use": "@vercel/static" }
   ],
   "routes": [

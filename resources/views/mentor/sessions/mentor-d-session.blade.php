@@ -196,12 +196,21 @@
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json',
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
           },
+          credentials: 'same-origin', // send session cookie for auth:mentor
           body: JSON.stringify({})
         });
-        const data = await resp.json();
-        if (data.meet_link) {
+
+        const contentType = resp.headers.get('content-type') || '';
+        if (!resp.ok) {
+          const msg = contentType.includes('application/json') ? JSON.stringify(await resp.json()) : await resp.text();
+          throw new Error(`Request failed: ${resp.status} ${msg}`);
+        }
+
+        const data = contentType.includes('application/json') ? await resp.json() : {};
+        if (data && data.meet_link) {
           closeCreateModal();
           window.location.href = data.meet_link;
         } else {
